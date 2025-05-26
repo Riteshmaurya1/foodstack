@@ -115,11 +115,11 @@ Follow these steps to deploy the FoodStack frontend on Vercel:
    - Make sure your frontend uses the production backend URL via environment variables for API calls.
 
    
-Happy Ordering! 🍔🍕🍜
 ```yaml
   **Notes:**
 
-- Replace `YourUsername` and email with your actual info.
-- Add your screenshots to a `screenshots` folder inside your repo.
-- Make sure image filenames match exactly.
+> 🚀 **Happy Ordering with FoodStack!**   
+> Feel free to fork this repo, customize it, and build your own delicious food ordering experience! 🍔🍕🍜.
+> 🍴 Remember to update your info, add screenshots, and enjoy coding!  
+
 
