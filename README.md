@@ -11,6 +11,20 @@ FoodStack is a full-stack web application designed to streamline the food orderi
 - Robust backend with MongoDB for storing user data, orders, and menu items
 - Notifications to keep users updated on their order progress
 
+## Screenshots
+
+### Home Page
+![Home Page](screenshots/homepage.png)
+
+### Menu Browsing
+![Menu Browsing](screenshots/menu.png)
+
+### Order Tracking
+![Order Tracking](screenshots/order-tracking.png)
+
+### User Dashboard
+![User Dashboard](screenshots/user-dashboard.png)
+
 ## Tech Stack
 - Frontend: React.js, CSS
 - Backend: Node.js, Express.js
@@ -59,7 +73,46 @@ FoodStack is a full-stack web application designed to streamline the food orderi
   For any questions or feedback, feel free to reach out:
   - GitHub: Riteshmaurya1
   - Email: riteshkumar04294@gmail.com
-    
+
+## Deployment on Vercel (Frontend)
+
+Follow these steps to deploy the FoodStack frontend on Vercel:
+
+1. **Build your React app locally:**
+   This command creates a production-ready build folder.
+   ```bash
+   npm run build
+2. **Sign up or log in to Vercel:**
+   Visit https://vercel.com/ and create an account or log in.
+3. **Import your project:**
+   - Click "New Project" on the Vercel dashboard.
+   - Connect your GitHub account (if not connected already).
+   - Select your FoodStack frontend repository or the frontend folder if it’s a monorepo.
+   - Click "Import".
+4. **Configure build settings:**
+   - Build Command:
+     ```base
+        npm run build
+   - Output Directory:
+     ```nginx
+        build
+5. **Add Environment Variables (if required):**
+   For example, if your frontend calls backend APIs, add your backend URL as an environment variable:
+   ```ini
+      REACT_APP_API_URL=https://your-backend-url.com/api
+6. **Deploy:**
+   - Click Deploy.
+   - Vercel will build and deploy your app automatically.
+   - After deployment, your app will be live at a Vercel-generated URL (e.g., https://foodstack.vercel.app).
+7. **Update API URLs:**
+   - Make sure your frontend uses the production backend URL via environment variables for API calls.
+
+   
 Happy Ordering! 🍔🍕🍜
 ```yaml
-  Would you like me to help you customize this further with screenshots, demo links, or installation videos?
+  **Notes:**
+
+- Replace `YourUsername` and email with your actual info.
+- Add your screenshots to a `screenshots` folder inside your repo.
+- Make sure image filenames match exactly.
+
