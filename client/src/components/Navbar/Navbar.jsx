@@ -1,4 +1,4 @@
- import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GiChefToque, GiForkKnifeSpoon } from "react-icons/gi";
 import { FiBook, FiHome, FiKey, FiLogIn, FiLogOut, FiPhone, FiShoppingCart, FiStar, } from "react-icons/fi";
 import { href, Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
@@ -29,7 +29,7 @@ const Navbar = () => {
         navigate('/');
     }
 
-    const handleLogOut = () => {
+    const handleLogout = () => {
         localStorage.removeItem('loginData');
         setIsAuthenticated(false);
     }
@@ -37,7 +37,7 @@ const Navbar = () => {
     // Extract desktop auth button
     const renderDesktopAuthButton = () => {
         return isAuthenticated ? (
-            <button className=' px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br
+            <button onClick={handleLogout} className=' px-3 md:px-3 lg:px-6 py-1.5 md:py-2 lg:py-3 bg-gradient-to-br
              from-amber-500 to-amber-700 text-[#2d1b0e] rounded-2xl font-bold hover:shadow-lg
              hover:shadow-amber-600/40 transition-all transform hover:scale-[1.02] border-amber-600/20
               flex items-center space-x-2 shadow-md shadow-amber-900/20 text-xs md:text-sm lg:text-sm'>
@@ -62,13 +62,13 @@ const Navbar = () => {
     //extract mobile auth BTN 
     const renderMobileAuthButton = () => {
         return isAuthenticated ? (
-            <button onClick={handleLogOut} className=' w-full px-4 py-3 bg-gradient-to-br from-amber-500 to-amber-700
+            <button onClick={handleLogout} className=' w-full px-4 py-3 bg-gradient-to-br from-amber-500 to-amber-700
              text-[#2d1b0e] rounded-xl flex items-center font-semibold justify-center space-x-2 '>
                 <FiLogOut />
                 <span>Logout</span>
             </button>
         ) : (
-            <button onClick={() =>{
+            <button onClick={() => {
                 navigate('/login')
                 setIsOpen(false)
             }} className=' w-full px-4 py-3 bg-gradient-to-br from-amber-500 to-amber-700
