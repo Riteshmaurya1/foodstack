@@ -18,19 +18,18 @@ const Banner = () => {
     return (
         <div className=' relative'>
             <div className=' bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700
-         text-white py-16 px-4 sm:px-8 relative overflow-hidden '>
-                <div className=' absolute inset-0 bg-gradient-to-r from-amber-900/20 to-amber-700/10
-            ' />
+             text-white py-16 px-4 sm:px-8 relative overflow-hidden '>
+                <div className=' absolute inset-0 bg-gradient-to-r from-amber-900/20 to-amber-700/10' />
                 <div className=' max-w-6xl mx-auto flex flex-col md:flex-row items-center'>
                     {/* Left Content */}
                     <div className=' flex-1 space-y-8 relative md:pr-8 lg:pr-19 text-center md:text-left'>
                         <h1 className=' text-4xl sm:text-5xl md:text-4xl lg:text-6xl font-bold leading-tight 
-                        font-serif drop-shadow-md '>
+                                font-serif drop-shadow-md '>
                             <h1>
                                 we're here
                             </h1>
                             <span className=' text-amber-400 bg-gradient-to-r from-amber-400 
-                             to-amber-300 bg-clip-text'>
+                                     to-amber-300 bg-clip-text'>
                                 For Food & Delivery
                             </span>
                         </h1>
@@ -57,7 +56,6 @@ const Banner = () => {
                                 </button>
                             </div>
                         </form>
-
                         <div className=' flex flex-wrap gap-4 justify-center md:justify-start mt-6 '>
                             <button className=' group flex items-center gap-3 bg-amber-800/30 hover:bg-amber-800/50
                              px-6 py-3 rounded-xl transition-all duration-300 border-2 border-amber-700/50 hover:border-amber-400
@@ -108,8 +106,8 @@ const Banner = () => {
                     </button>
 
                     <div className=' w-full max-w-4xl mx-auto '>
-                        <video controls autoPlay 
-                        className=' w-full aspect-video object-contain rounded-lg shadow-2xl'
+                        <video controls autoPlay
+                            className=' w-full aspect-video object-contain rounded-lg shadow-2xl'
                         >
                             <source src={video} type='video/mp4' />
                         </video>
