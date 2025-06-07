@@ -44,7 +44,17 @@ const OurHome = () => {
                                     backdrop-blur-sm flex flex-col transition-all duration-500"
                                 style={{ '--index': i }}>
                                 <div className=" relative h-48 sm:h-5/6 md:h-60 flex items-center justify-center bg-black/10">
-                                    <img src={item.image} alt={item.name} /></div>
+                                    <img src={item.image} alt={item.name}
+                                        className=' max-h-full max-w-full object-contain transition-all duration-700 ' />
+                                </div>
+                                <div className=" p-4 sm:p-6 flex flex-col flex-grow">
+                                    <div className=" absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent 
+                                     via-amber-800/50 to-transparent opacity-50 transition-all duration-300"/>
+                                     <h3 className=" text-xl sm:text-2xl mb-2 font-dancingscript text-amber-100 transition-colors">
+                                        {item.name}
+                                     </h3>
+                                     <p className=" text-amber-100/80 text-xs"></p>
+                                </div>
                             </div>
                         )
                     })}
