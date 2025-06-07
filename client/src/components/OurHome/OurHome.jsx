@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useCart } from '../../CartContext/CartContext'
-
 const categories = ['Breakfast', 'Lunch', 'Dinner', 'Mexican', 'Italian', 'Desserts', 'Drinks'];
 import { dummyMenuData } from '../../assets/OmhDD'
+import { Link } from 'react-router-dom'
+import { FaMinus, FaPlus } from 'react-icons/fa'
+
 const OurHome = () => {
     const [activeCategory, setActiveCategory] = useState(categories[0]);
     const displayItems = (dummyMenuData[activeCategory] || []).slice(0, 4);
     const { cartItems, addToCart, removeFromCart } = useCart();
-    const getQuantity = id => (cartItems.find(i => i.id === id)?.quantity || 0)
+    const getQuantity = id => (cartItems.find(i => i.id === id) ?.quantity || 0)
     return (
         <div className=' bg-gradient-to-br from-[#1a120b] via-[#2a1e14] to-[#3e2b1d]  min-h-screen 
       py-16 px-4 sm:px-6 lg:px-8 '>
@@ -50,14 +52,62 @@ const OurHome = () => {
                                 <div className=" p-4 sm:p-6 flex flex-col flex-grow">
                                     <div className=" absolute top-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent 
                                      via-amber-800/50 to-transparent opacity-50 transition-all duration-300"/>
-                                     <h3 className=" text-xl sm:text-2xl mb-2 font-dancingscript text-amber-100 transition-colors">
+                                    <h3 className=" text-xl sm:text-2xl mb-2 font-dancingscript text-amber-100 transition-colors">
                                         {item.name}
-                                     </h3>
-                                     <p className=" text-amber-100/80 text-xs"></p>
+                                    </h3>
+                                    <p className=" text-amber-100/80 text-xs sm:text-sm mb-4 font-cinzel leading-relaxed">
+                                        {item.description}
+                                    </p>
+                                    <div className=" mt-auto flex items-center gap-4 justify-between">
+                                        <div className=" bg-amber-100/10 backdrop-blur-sm px-3 py-1 rounded-2xl shadow-lg">
+                                            <span className=" text-xl font-bold text-amber-300 font-dancingscript">
+                                                ₹ {item.price}
+                                            </span>
+                                        </div>
+                                        <div className=" flex items-center gap-2">
+                                            {quantity > 0 ? (
+                                                <>
+                                                    <button className=" w-8 h-8 rounded-full bg-amber-900/40 flex items-center 
+                                                    justify-center hover:bg-amber-800/50 transition-colors"
+                                                        onClick={() => quantity > 1 ? addToCart(item, quantity - 1) : removeFromCart(item.id)}>
+                                                        <FaMinus className='text-amber-100' />
+                                                    </button>
+                                                    <span className=" w-8 text-center text-amber-100">
+                                                        {quantity}
+                                                    </span>
+                                                    <button className=" w-8 h-8 rounded-full bg-amber-900/40 flex items-center 
+                                                    justify-center hover:bg-amber-800/50 transition-colors"
+                                                        onClick={() => addToCart(item, quantity + 1)}>
+                                                        <FaPlus className='text-amber-100' />
+                                                    </button>
+                                                </>
+                                            ) : (
+                                                <button
+                                                    onClick={() => addToCart(item, i)}
+                                                    className=" bg-amber-900/40 px-4 py-1.5 rounded-full 
+                                                 font-cinzel text-xs uppercase sm:text-sm tracking-wider transtion-transfrom duration-300 
+                                                  hover:scale-110 hover:shadow-lg hover:shadow-amber-900/20 relative overflow-hidden border 
+                                                  border-amber-800/50">
+                                                    <span className=" relative z-10 text-xs font-bold text-amber-300 font-dancingscript">
+                                                        Add to Cart
+                                                    </span>
+                                                </button>
+                                            )}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         )
                     })}
+                </div>
+                <div className="flex justify-center mt-16">
+                    <Link to='/menu'
+                        className='bg-amber-900/30 border-2 border-amber-800/30 text-amber-100 px-8 
+                    sm-px-10 py-3 rounded-full font-cinzel uppercase tracking-widest transition-all 
+                    duration-300 hover:bg-amber-800/40 hover:text-amber-50 hover:scale-105 hover:shadow-lg 
+                    hover:shadow-amber-900/20 backdrop-blur-sm '>
+                        Explore Full Menu
+                    </Link>
                 </div>
             </div>
         </div>
